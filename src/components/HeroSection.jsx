@@ -146,7 +146,7 @@ export const HeroSection = () => {
                             {/* Profile Image Container */}
                             <div className="relative w-80 h-80 rounded-full bg-linear-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center overflow-hidden">
                                 <img
-                                    src="/src/assets/profile-picture.png"
+                                    src="/public/images/profile-picture.png"
                                     alt="Mohamed Osama"
                                     className="w-full h-full object-contain"
                                 />
