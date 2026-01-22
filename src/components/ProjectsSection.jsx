@@ -6,7 +6,7 @@ const projects = [
         id: "1",
         title: "FreshCart – E-Commerce App",
         description: "Full-Featured e-commerce platform with user authentication and payment processing.",
-        image: "/public/images/profile-picture.png",
+        image: "/public/images/freshcart-app.png",
         tags: ["React", "Tailwind-CSS", "Context-API"],
         demoUrl: "https://freshcart-mohameds-projects-2264d49f.vercel.app",
         githubUrl: "https://github.com/Mohamed-Osama17/freshcart",
