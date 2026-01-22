@@ -1,0 +1,627 @@
+import { ArrowDown, ArrowRight, Download } from "lucide-react"
+
+Hero-Section Components Version-1
+
+export const HeroSection = () => {
+    return <>
+        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center">
+            <div className="container max-w-4xl mx-auto text-center z-10">
+                <div className="space-y-6">
+                    <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                        <span className="text-glow opacity-0 animate-fade-in">Hi, I'm</span>
+                        <span className="text-primary opacity-0 animate-fade-in-delay-1"> Mohamed</span>
+                        <span className="text-glow  opacity-0 animate-fade-in-delay-2"> Osama</span>
+                    </h1>
+                    <p className="text-lg md:text-xl text-foreground mx-auto opacity-0 animate-fade-in-delay-3">
+                        I create stellar web experiences with modern technologies.
+                        Specializing in full-stuck web development,
+                        I build interfaces that are both beautiful and functional.
+                    </p>
+                    <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in-delay-4">
+                        {/* Filled button */}
+                        <a href="#projects" className="cosmic-button flex items-center justify-center gap-2">
+                            View My Work
+                            <ArrowRight size={18} />
+                        </a>
+
+                        {/* Outline + Icon button */}
+                        <a
+                            href="/Mohamed-Osama-Frontend-Developer-Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="outline-button flex items-center justify-center gap-2"
+                        >
+                            <Download size={18} />
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div className="absolute bottom-28 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+                <span className="text-lg mb-2 text-foreground">Scroll</span>
+                <ArrowDown className="text-primary" />
+            </div>
+        </section>
+    </>
+}
+
+
+
+
+Hero-Section Components Version-2
+
+
+import { ArrowDown, ArrowRight, Download, Sparkles } from "lucide-react"
+import { motion } from "framer-motion"
+
+export const HeroSection = () => {
+    return (
+        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+            {/* Animated Background Gradient Orbs */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 90, 0],
+                    }}
+                    transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.3, 1],
+                        rotate: [0, -90, 0],
+                    }}
+                    transition={{
+                        duration: 25,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary/15 rounded-full blur-3xl"
+                />
+            </div>
+
+            <div className="container max-w-5xl mx-auto text-center z-10">
+                <div className="space-y-8">
+                    {/* Badge */}
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
+                    >
+                        <Sparkles className="w-4 h-4 text-primary" />
+                        <span className="text-sm font-medium text-primary">Available for freelance work</span>
+                    </motion.div>
+
+                    {/* Main Heading */}
+                    <div className="space-y-4">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
+                        >
+                            <span className="block text-foreground">Hi, I'm</span>
+                            <span className="block">
+                                <span className="bg-linear-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                                    Mohamed
+                                </span>
+                                <span className="text-foreground"> Osama</span>
+                            </span>
+                        </motion.h1>
+
+                        {/* Animated Text Role */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className="flex items-center justify-center gap-2 text-xl md:text-2xl text-muted-foreground"
+                        >
+                            <span>A</span>
+                            <span className="relative">
+                                <span className="text-primary font-semibold">Front-End Developer</span>
+                                <motion.span
+                                    className="absolute bottom-0 left-0 w-full h-0.5 bg-primary"
+                                    initial={{ scaleX: 0 }}
+                                    animate={{ scaleX: 1 }}
+                                    transition={{ duration: 0.8, delay: 0.6 }}
+                                />
+                            </span>
+                            <span>& Designer</span>
+                        </motion.div>
+                    </div>
+
+                    {/* Description */}
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+                    >
+                        I create stellar web experiences with modern technologies.
+                        Specializing in full-stack web development,
+                        I build interfaces that are both beautiful and functional.
+                    </motion.p>
+
+                    {/* CTA Buttons */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.8 }}
+                        className="pt-6 flex flex-col sm:flex-row gap-4 justify-center"
+                    >
+                        {/* Primary Button */}
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            href="#projects"
+                            className="group cosmic-button flex items-center justify-center gap-2 px-8 py-4 text-base font-medium"
+                        >
+                            View My Work
+                            <ArrowRight
+                                size={18}
+                                className="group-hover:translate-x-1 transition-transform duration-300"
+                            />
+                        </motion.a>
+
+                        {/* Secondary Button */}
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            href="/Mohamed-Osama-Frontend-Developer-Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group outline-button flex items-center justify-center gap-2 px-8 py-4 text-base font-medium"
+                        >
+                            <Download
+                                size={18}
+                                className="group-hover:translate-y-0.5 transition-transform duration-300"
+                            />
+                            Download CV
+                        </motion.a>
+                    </motion.div>
+
+                    {/* Stats or Quick Info */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.6, delay: 1 }}
+                        className="pt-12 flex flex-wrap justify-center gap-8 md:gap-12"
+                    >
+                        <div className="text-center">
+                            <div className="text-3xl md:text-4xl font-bold text-primary">2+</div>
+                            <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-3xl md:text-4xl font-bold text-primary">20+</div>
+                            <div className="text-sm text-muted-foreground mt-1">Projects Completed</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-3xl md:text-4xl font-bold text-primary">15+</div>
+                            <div className="text-sm text-muted-foreground mt-1">Happy Clients</div>
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, y: [0, 10, 0] }}
+                transition={{
+                    opacity: { duration: 0.6, delay: 1.2 },
+                    y: {
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }
+                }}
+                className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer"
+            >
+                <span className="text-sm text-muted-foreground font-medium">Scroll to explore</span>
+                <div className="p-2 rounded-full border-2 border-primary/30 bg-primary/5">
+                    <ArrowDown className="text-primary w-5 h-5" />
+                </div>
+            </motion.div>
+        </section>
+    )
+}
+
+
+
+
+
+
+
+
+
+Hero-Section Components Version-3
+
+
+import { ArrowDown, ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react"
+import { motion } from "framer-motion"
+
+export const HeroSection = () => {
+    // Animation variants for stagger effect
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.3
+            }
+        }
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.6,
+                ease: "easeOut"
+            }
+        }
+    }
+
+    const socialLinks = [
+        { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
+        { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+        { icon: Mail, href: "mailto:your.email@example.com", label: "Email" }
+    ]
+
+    return (
+        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-16 overflow-hidden">
+            {/* Animated background gradient blobs */}
+            <div className="absolute inset-0 -z-10 overflow-hidden">
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, 90, 0],
+                    }}
+                    transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute top-1/4 -left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.3, 1],
+                        rotate: [0, -90, 0],
+                    }}
+                    transition={{
+                        duration: 25,
+                        repeat: Infinity,
+                        ease: "linear"
+                    }}
+                    className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+                />
+            </div>
+
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="container max-w-5xl mx-auto text-center z-10"
+            >
+                <div className="space-y-8">
+                    {/* Badge */}
+                    <motion.div variants={itemVariants} className="flex justify-center">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                            </span>
+                            Available for new opportunities
+                        </span>
+                    </motion.div>
+
+                    {/* Main Heading */}
+                    <motion.h1
+                        variants={itemVariants}
+                        className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
+                    >
+                        <span className="block text-foreground">Hi, I'm</span>
+                        <span className="block text-primary mt-2">Mohamed Osama</span>
+                    </motion.h1>
+
+                    {/* Subtitle with typing effect style */}
+                    <motion.div variants={itemVariants}>
+                        <h2 className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-4">
+                            Full-Stack Web Developer
+                        </h2>
+                        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                            I create stellar web experiences with modern technologies.
+                            Specializing in full-stack web development,
+                            I build interfaces that are both beautiful and functional.
+                        </p>
+                    </motion.div>
+
+                    {/* CTA Buttons */}
+                    <motion.div
+                        variants={itemVariants}
+                        className="pt-6 flex flex-col sm:flex-row gap-4 justify-center items-center"
+                    >
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            href="#projects"
+                            className="group relative px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 flex items-center gap-2"
+                        >
+                            View My Work
+                            <ArrowRight
+                                size={18}
+                                className="group-hover:translate-x-1 transition-transform duration-300"
+                            />
+                        </motion.a>
+
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            href="/Mohamed-Osama-Frontend-Developer-Resume.pdf"
+                            download
+                            className="group px-8 py-4 rounded-full bg-transparent border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center gap-2"
+                        >
+                            <Download
+                                size={18}
+                                className="group-hover:translate-y-1 transition-transform duration-300"
+                            />
+                            Download CV
+                        </motion.a>
+                    </motion.div>
+
+                    {/* Social Links */}
+                    <motion.div
+                        variants={itemVariants}
+                        className="pt-8 flex gap-4 justify-center"
+                    >
+                        {socialLinks.map((social) => (
+                            <motion.a
+                                key={social.label}
+                                whileHover={{ scale: 1.1, y: -2 }}
+                                whileTap={{ scale: 0.9 }}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-3 rounded-full bg-card/50 backdrop-blur-sm border border-border/50 text-foreground hover:text-primary hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
+                                aria-label={social.label}
+                            >
+                                <social.icon size={20} />
+                            </motion.a>
+                        ))}
+                    </motion.div>
+                </div>
+            </motion.div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 2, duration: 0.5 }}
+                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+            >
+                <span className="text-sm mb-2 text-muted-foreground font-medium">Scroll Down</span>
+                <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                >
+                    <ArrowDown className="text-primary" size={24} />
+                </motion.div>
+            </motion.div>
+
+            {/* Decorative grid pattern */}
+            <div className="absolute inset-0 -z-20 opacity-[0.03]">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
+                    backgroundSize: '40px 40px'
+                }} />
+            </div>
+        </section>
+    )
+}
+
+
+
+Hero-Section Components Version-4
+
+import { ArrowDown, Download, Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { motion } from "framer-motion"
+
+export const HeroSection = () => {
+    const socialLinks = [
+        { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
+        { icon: Linkedin, href: "https://linkedin.com/in/yourusername", label: "LinkedIn" },
+        { icon: Twitter, href: "https://twitter.com/yourusername", label: "Twitter" },
+        { icon: Mail, href: "mailto:your.email@example.com", label: "Email" },
+    ]
+
+    return (
+        <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 py-24 md:px-12 lg:px-16">
+            {/* Main Container */}
+            <div className="w-full max-w-7xl mx-auto">
+                {/* Grid Layout: Left Content + Right Visual */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    
+                    {/* Left Column - Main Content */}
+                    <div className="flex flex-col gap-8">
+                        {/* Badge */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20">
+                                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                                Available for Freelance Work
+                            </span>
+                        </motion.div>
+
+                        {/* Heading Section */}
+                        <div className="flex flex-col gap-4">
+                            <motion.h1
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.1 }}
+                                className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
+                            >
+                                <span className="text-foreground">Hi, I'm </span>
+                                <span className="text-primary">Mohamed Osama</span>
+                            </motion.h1>
+
+                            <motion.h2
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="text-2xl md:text-3xl font-semibold text-foreground/70"
+                            >
+                                Full-Stack Web Developer
+                            </motion.h2>
+                        </div>
+
+                        {/* Description */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.3 }}
+                            className="text-base md:text-lg text-muted-foreground leading-relaxed"
+                        >
+                            I create stellar web experiences with modern technologies.
+                            Specializing in full-stack web development,
+                            I build interfaces that are both beautiful and functional.
+                        </motion.p>
+
+                        {/* CTA Buttons */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            className="flex flex-col sm:flex-row gap-4"
+                        >
+                            <a
+                                href="#projects"
+                                className="group flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:scale-105"
+                            >
+                                View My Work
+                                <motion.span
+                                    animate={{ x: [0, 5, 0] }}
+                                    transition={{ duration: 1.5, repeat: Infinity }}
+                                >
+                                    →
+                                </motion.span>
+                            </a>
+
+                            <a
+                                href="/Mohamed-Osama-Frontend-Developer-Resume.pdf"
+                                download
+                                className="group flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-card border-2 border-border text-foreground font-medium transition-all duration-300 hover:border-primary/50 hover:bg-primary/5"
+                            >
+                                <Download size={18} className="group-hover:animate-bounce" />
+                                Download CV
+                            </a>
+                        </motion.div>
+
+                        {/* Social Links */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
+                            className="flex flex-col sm:flex-row sm:items-center gap-4"
+                        >
+                            <span className="text-sm text-muted-foreground">Connect with me:</span>
+                            <div className="flex gap-3">
+                                {socialLinks.map((social) => (
+                                    <a
+                                        key={social.label}
+                                        href={social.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label={social.label}
+                                        className="flex items-center justify-center p-2 rounded-full bg-card border border-border hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:scale-110 group"
+                                    >
+                                        <social.icon size={18} className="text-foreground/70 group-hover:text-primary transition-colors" />
+                                    </a>
+                                ))}
+                            </div>
+                        </motion.div>
+
+                        {/* Scroll Indicator */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                            className="flex items-center gap-3 pt-4"
+                        >
+                            <motion.div
+                                animate={{ y: [0, 8, 0] }}
+                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                                className="flex flex-col items-center gap-2"
+                            >
+                                <span className="text-sm text-muted-foreground font-medium">Scroll to explore</span>
+                                <ArrowDown size={20} className="text-primary" />
+                            </motion.div>
+                        </motion.div>
+                    </div>
+
+                    {/* Right Column - Profile Visual */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.7, delay: 0.3 }}
+                        className="hidden lg:flex items-center justify-center"
+                    >
+                        <div className="relative flex items-center justify-center">
+                            {/* Animated gradient blob */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-primary/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+                            
+                            {/* Profile Image Container */}
+                            <div className="relative w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border-4 border-primary/20 flex items-center justify-center overflow-hidden">
+                                {/* Replace this with your actual image */}
+                                <div className="text-6xl font-bold text-primary/40">MO</div>
+                                {/* <img src="/path-to-your-image.jpg" alt="Mohamed Osama" className="w-full h-full object-cover" /> */}
+                            </div>
+
+                            {/* Floating decoration - Top Right */}
+                            <motion.div
+                                animate={{
+                                    y: [-10, 10, -10],
+                                    rotate: [0, 5, 0],
+                                }}
+                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute top-0 right-0 w-20 h-20 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
+                            />
+                            
+                            {/* Floating decoration - Bottom Left */}
+                            <motion.div
+                                animate={{
+                                    y: [10, -10, 10],
+                                    rotate: [0, -5, 0],
+                                }}
+                                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                                className="absolute bottom-0 left-0 w-16 h-16 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Background Decorations */}
+            <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl transform -translate-x-1/2"></div>
+                <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl transform translate-x-1/2"></div>
+            </div>
+        </section>
+    )
+}
